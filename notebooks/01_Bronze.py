@@ -13,3 +13,18 @@ bronze_schema = StructType([
     StructField("Denial_Code", StringType(), True),
     StructField("Payer_ID", StringType(), True)
 ])
+
+
+# Path to your ADLS Gen2 / Fabric Lakehouse Bronze folder
+bronze_path = "Files/Bronze/Billing_Raw/*.parquet"
+
+df_raw = spark.\
+    read.\
+    format("parquet").\
+    schema(bronze_schema).\
+    load(bronze_path)
+
+# Add Audit Metadata
+df_with_metadata = df_raw.\
+    withColumn("Ingestion_Timestamp", current_timestamp()).\
+    withColumn("Source_File", input_file_name())
