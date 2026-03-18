@@ -1,1 +1,29 @@
 
+// ---------------------------------------------------------
+// Project: Clinical Financial Decision Support Engine
+// Purpose: Identify real-time spikes in billing denials
+// ---------------------------------------------------------
+
+let TrendWindow = 7d;
+let CheckWindow = 1h;
+let ThresholdMultiplier = 2.0; // Flag if 2x higher than average
+
+// 1. Calculate the 7-day baseline for denials per hour
+let BaselineDenials = 
+    Fact_Clinical_Billing
+    | where Service_Date > ago(TrendWindow)
+    | summarize HourlyAverage = count() / (24 * 7) by Payer_ID;
+
+// 2. Calculate the current hourly denial rate
+let CurrentDenials = 
+    Fact_Clinical_Billing
+    | where Service_Date > ago(CheckWindow)
+    | summarize CurrentCount = count() by Payer_ID;
+
+// 3. Join and flag anomalies using Standard Deviation logic (or Multiplier)
+CurrentDenials
+| join kind=inner BaselineDenials on Payer_ID
+| extend VariancePercent = round(((todouble(CurrentCount) - HourlyAverage) / HourlyAverage) * 100, 2)
+| where CurrentCount > (HourlyAverage * ThresholdMultiplier)
+| project Payer_ID, CurrentCount, HourlyAverage, VariancePercent, AlertStatus = "⚠️ CRITICAL SPIKE DETECTED"
+| order by VariancePercent desc
