@@ -1,25 +1,39 @@
 # Schema
 
-
-
-### 
+### df_patients
 ```python
-
+root
+ |-- PatientKey: integer (nullable = false)
+ |-- MRN: string (nullable = false)
+ |-- Name: string (nullable = true)
+ |-- DOB: date (nullable = true)
+ |-- Gender: string (nullable = true)
+ |-- Insurance_Provider: string (nullable = true)
 ```
 
-### 
+### df_physicians
 ```python
-
+root
+ |-- PhysicianKey: integer (nullable = false)
+ |-- NPI_Number: string (nullable = false)
+ |-- Name: string (nullable = true)
+ |-- Specialty: string (nullable = true)
+ |-- Department: string (nullable = true)
 ```
 
-### 
+### dim_date
 ```python
-
-```
-
-### 
-```python
-
+root
+ |-- DateKey: integer (nullable = true)
+ |-- Date: date (nullable = false)
+ |-- Year: integer (nullable = false)
+ |-- Quarter: integer (nullable = false)
+ |-- Month: integer (nullable = false)
+ |-- MonthName: string (nullable = false)
+ |-- Day: integer (nullable = false)
+ |-- DayOfWeek: integer (nullable = false)
+ |-- DayName: string (nullable = false)
+ |-- DayType: string (nullable = false)
 ```
 
 ### df_diagnosis
