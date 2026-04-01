@@ -1,0 +1,26 @@
+DiagnosisKey,ICD10_Code,Description,Category
+1,I10,Essential (primary) hypertension,Circulatory System
+2,E11.9,Type 2 diabetes mellitus without complications,Endocrine/Metabolic
+3,J45.909,"Unspecified asthma, uncomplicated",Respiratory System
+4,M54.5,Low back pain,Musculoskeletal
+5,N39.0,"Urinary tract infection, site not specified",Genitourinary
+6,F41.1,Generalized anxiety disorder,Mental Health
+7,G47.00,"Insomnia, unspecified",Nervous System
+8,Z00.00,Encounter for general adult medical examination,General/Preventive
+9,I25.10,ASHD of native coronary artery without angina pectoris,Circulatory System
+10,E66.9,"Obesity, unspecified",Endocrine/Metabolic
+11,J06.9,"Acute upper respiratory infection, unspecified",Respiratory System
+12,R05,Cough,Symptoms/Signs
+13,M17.9,"Osteoarthritis of knee, unspecified",Musculoskeletal
+14,H10.9,Unspecified conjunctivitis,Sensory Organs
+15,L20.9,"Atopic dermatitis, unspecified",Skin/Subcutaneous
+16,K21.9,Gastro-esophageal reflux disease without esophagitis,Digestive System
+17,B34.9,"Viral infection, unspecified",Infectious Diseases
+18,D64.9,"Anemia, unspecified",Blood/Hematologic
+19,S06.0X0A,"Concussion without loss of consciousness, initial encounter",Injury/Poisoning
+20,F32.9,"Major depressive disorder, single episode, unspecified",Mental Health
+21,Z23,Encounter for immunization,General/Preventive
+22,R51,Headache,Symptoms/Signs
+23,I48.91,Unspecified atrial fibrillation,Circulatory System
+24,E03.9,"Hypothyroidism, unspecified",Endocrine/Metabolic
+25,J30.9,"Allergic rhinitis, unspecified",Respiratory System
