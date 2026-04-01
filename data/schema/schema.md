@@ -1,4 +1,6 @@
 # Schema
+
+### fact_lab_results
 ```python
 fact_lab_results.printSchema()
 
