@@ -28,7 +28,7 @@ from pyspark.sql.types import IntegerType
 # 2. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
 ```python
-> Patient
+# Patient
 patient_schema = StructType([
     StructField("PatientKey", IntegerType(), False),
     StructField("MRN", StringType(), False),
@@ -38,7 +38,7 @@ patient_schema = StructType([
     StructField("Insurance_Provider", StringType(), True)
 ])
 
-> Physician
+# Physician
 physician_schema = StructType([
     StructField("PhysicianKey", IntegerType(), False),
     StructField("NPI_Number", StringType(), False),
