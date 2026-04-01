@@ -1,0 +1,101 @@
+PatientKey,MRN,Name,DOB,Gender,Insurance_Provider
+1,MRN-809916,James Lynch,2012-05-29,U,Medicare
+2,MRN-244724,Sarah Diaz,1964-07-01,U,Cigna
+3,MRN-569345,Maureen Lopez,1957-01-28,F,Blue Cross Blue Shield
+4,MRN-665312,Stanley Carter,1991-07-30,F,Aetna
+5,MRN-652149,Bradley Hancock,1952-10-24,M,Blue Cross Blue Shield
+6,MRN-945389,Amber Chavez,2023-12-22,M,Medicare
+7,MRN-845730,Susan Ramirez,1988-10-04,U,Kaiser Permanente
+8,MRN-634705,Philip Norman,1969-11-19,M,Medicare
+9,MRN-256068,Steve Lopez,1996-03-04,F,Cigna
+10,MRN-771335,Angela Lara,2022-12-23,U,Aetna
+11,MRN-301366,Lori Patrick,2018-01-15,U,Aetna
+12,MRN-548812,Neil Martinez,1980-11-05,Other,Cigna
+13,MRN-163247,Cheryl Hutchinson,2005-08-04,F,Kaiser Permanente
+14,MRN-942277,Felicia Thomas,1987-11-05,U,UnitedHealthcare
+15,MRN-845859,Sandra Wilson,1948-07-06,F,Aetna
+16,MRN-666439,Seth Cantu,2008-03-04,U,Medicare
+17,MRN-585684,Brenda Johnson,1939-09-14,U,UnitedHealthcare
+18,MRN-507138,Emily Garner,2007-03-02,U,Medicare
+19,MRN-263018,Tammy Owens,2011-10-23,Other,Medicare
+20,MRN-887193,James Joseph,1994-04-05,U,UnitedHealthcare
+21,MRN-602403,Teresa Golden,1979-03-21,U,Kaiser Permanente
+22,MRN-584984,Samantha Jenkins,2003-04-10,Other,UnitedHealthcare
+23,MRN-404157,Patrick Mcguire,1969-06-27,F,Cigna
+24,MRN-450509,Evelyn Lewis,1971-04-11,U,UnitedHealthcare
+25,MRN-305978,Bradley Lee,1943-06-12,U,Aetna
+26,MRN-107244,Brittany Brown,1991-04-09,M,UnitedHealthcare
+27,MRN-273131,Krista Anderson,1960-08-26,F,Medicare
+28,MRN-591965,Theresa Swanson,1936-02-20,Other,Cigna
+29,MRN-943993,Jane Barton,1956-05-30,F,Medicare
+30,MRN-240628,Chase Newman PhD,1950-03-14,Other,UnitedHealthcare
+31,MRN-382453,Dennis Serrano,1942-01-13,M,Medicare
+32,MRN-376722,Mark Black,1960-08-29,U,UnitedHealthcare
+33,MRN-133922,Marcus Wilkinson,2024-02-04,M,Aetna
+34,MRN-103065,James Mccall,1977-03-09,Other,UnitedHealthcare
+35,MRN-415169,Derek Mccall,1975-02-06,M,Aetna
+36,MRN-416013,Angela Gonzalez,2002-04-24,M,Cigna
+37,MRN-561939,Jessica Zimmerman,1964-12-07,M,Blue Cross Blue Shield
+38,MRN-110849,Amy White,2003-03-10,Other,UnitedHealthcare
+39,MRN-820851,Dr. Carolyn Alvarado,1936-08-04,U,Cigna
+40,MRN-151857,Patricia Mcmahon,2012-09-18,U,Aetna
+41,MRN-253048,Nicholas Gonzalez,1960-07-25,Other,Cigna
+42,MRN-307550,Sabrina Schmidt,1979-10-14,Other,Cigna
+43,MRN-734575,Kevin Love,1936-05-05,F,Blue Cross Blue Shield
+44,MRN-978484,Melinda Wheeler,2008-12-19,M,Kaiser Permanente
+45,MRN-165080,Robert Bradshaw,2018-10-31,U,Cigna
+46,MRN-824942,David Owens,1974-12-20,Other,Cigna
+47,MRN-459327,Juan Anderson,1996-01-21,M,Blue Cross Blue Shield
+48,MRN-630383,Amy Henderson,1996-09-19,Other,Medicare
+49,MRN-352472,Chad Parrish,1959-10-14,Other,Aetna
+50,MRN-750663,Jeffrey Moore,2015-10-18,F,Blue Cross Blue Shield
+51,MRN-157387,Lisa Dean,1960-01-16,F,Cigna
+52,MRN-463445,Mr. Robert Daniel,1967-05-22,U,UnitedHealthcare
+53,MRN-391979,Jennifer Thomas,1962-03-20,Other,Cigna
+54,MRN-873948,Victoria Munoz,2023-12-07,Other,Cigna
+55,MRN-234846,Diana Saunders,1995-01-22,F,Kaiser Permanente
+56,MRN-243606,Elizabeth Pitts,1946-10-31,M,Kaiser Permanente
+57,MRN-146242,Derek Hobbs,2007-05-31,M,Medicare
+58,MRN-972515,Stephen Miller,2012-09-25,F,Kaiser Permanente
+59,MRN-285339,Debra Davis,1971-12-03,M,Medicare
+60,MRN-369713,Debra Davis,1944-03-11,U,Aetna
+61,MRN-509294,Carolyn King,2017-01-05,M,Cigna
+62,MRN-405074,Michael Cunningham,1956-06-28,M,Aetna
+63,MRN-908784,Jennifer Carpenter,2010-02-01,Other,Aetna
+64,MRN-646814,Angela Peterson,1956-08-24,Other,Aetna
+65,MRN-477489,Kelly Vasquez MD,1950-07-06,U,Blue Cross Blue Shield
+66,MRN-516301,Colin Sims,1984-01-21,U,Blue Cross Blue Shield
+67,MRN-627587,Zachary Gibbs,2006-03-08,F,Medicare
+68,MRN-575627,Brittany Proctor,1978-02-09,U,Kaiser Permanente
+69,MRN-965995,Steven Burke,1964-04-16,Other,Blue Cross Blue Shield
+70,MRN-867272,Nicholas Wong,1958-04-03,F,UnitedHealthcare
+71,MRN-257123,Charles Glass,1997-08-10,F,Blue Cross Blue Shield
+72,MRN-842914,Martha Williams,2018-05-29,M,Blue Cross Blue Shield
+73,MRN-233994,Randy Mccoy,1954-07-27,U,Medicare
+74,MRN-644620,Dakota Robinson,1986-01-25,F,Medicare
+75,MRN-334903,Robert Brown Jr.,1944-06-28,U,Medicare
+76,MRN-928949,Angela Torres,1968-09-01,Other,Cigna
+77,MRN-127593,Jacqueline Garcia,1958-08-07,Other,Medicare
+78,MRN-568946,Mary Wilson,2001-07-19,Other,Aetna
+79,MRN-324952,Haley Gill,1941-05-27,M,Blue Cross Blue Shield
+80,MRN-298160,Danielle Dickerson,1974-12-16,U,Kaiser Permanente
+81,MRN-505078,Martha Hebert,1942-09-23,U,Aetna
+82,MRN-310398,Joseph Chung,1937-07-08,F,Cigna
+83,MRN-650460,Thomas Davis,1962-02-25,Other,Blue Cross Blue Shield
+84,MRN-768994,Sheryl Bell,2011-05-17,M,Medicare
+85,MRN-349629,Margaret Wright,2014-06-28,F,Blue Cross Blue Shield
+86,MRN-532750,Ashley Nunez,1965-05-01,Other,Cigna
+87,MRN-141304,David Shepherd,2008-07-26,F,Kaiser Permanente
+88,MRN-568553,Jeffrey Ellis,2021-02-19,U,UnitedHealthcare
+89,MRN-427440,Bridget Green,1949-11-09,F,UnitedHealthcare
+90,MRN-439019,Diana Stein,1952-04-16,F,Kaiser Permanente
+91,MRN-973134,Connie Fisher,1939-01-29,M,Medicare
+92,MRN-209727,Keith Kirk,1969-10-29,Other,Aetna
+93,MRN-235084,James Reynolds,2005-03-28,Other,Medicare
+94,MRN-681646,Linda Stone DDS,1969-02-15,F,Aetna
+95,MRN-312663,Michael Garcia,1985-01-09,U,Medicare
+96,MRN-330746,Mr. Joseph Boyd MD,1997-08-02,U,UnitedHealthcare
+97,MRN-518815,Elizabeth Nelson,2000-11-22,U,Cigna
+98,MRN-342701,Katrina Mcdaniel,1949-07-06,Other,Kaiser Permanente
+99,MRN-868820,Tammy Taylor,1945-11-19,F,Medicare
+100,MRN-992465,Willie Stewart,1972-09-30,U,Kaiser Permanente
