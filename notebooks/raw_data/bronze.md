@@ -49,6 +49,53 @@ physician_schema = StructType([
     StructField("Department", StringType(), True)
 ])
 ```
+### Date
+```python
+# 1. Define date range
+start_date = "2020-01-01"
+end_date = "2030-12-31"
+
+# 2. Generate the sequence and explode into a single column named "FullDate"
+df_base = spark.range(1).select(
+    expr(f"sequence(to_date('{start_date}'), to_date('{end_date}'), interval 1 day)").alias("date_array")
+)
+
+df_exploded = df_base.select(explode(col("date_array")).alias("FullDate"))
+
+# 3. Derive attributes using the "FullDate" reference
+dim_date = df_exploded.select(
+    date_format(col("FullDate"), "yyyyMMdd").cast("int").alias("DateKey"),
+    col("FullDate").alias("Date"),
+    year(col("FullDate")).alias("Year"),
+    quarter(col("FullDate")).alias("Quarter"),
+    month(col("FullDate")).alias("Month"),
+    date_format(col("FullDate"), "MMMM").alias("MonthName"),
+    dayofmonth(col("FullDate")).alias("Day"),
+    dayofweek(col("FullDate")).alias("DayOfWeek"),
+    date_format(col("FullDate"), "EEEE").alias("DayName"),
+    expr("CASE WHEN dayofweek(FullDate) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END").alias("DayType")
+)
+
+# 4. Write to Lakehouse
+dim_date.write.format("delta").mode("overwrite").saveAsTable("Dim_Date")
+
+display(dim_date.limit(10))
+```
+### Physician
+```python
+
+```
+### Physician
+```python
+
+```
+### Physician
+```python
+
+```
+### Physician
+```python
+
 # 3. Synthetic Data Generation
 ```python
 providers = ["Blue Cross Blue Shield", "Aetna", "UnitedHealthcare", "Cigna", "Kaiser Permanente", "Medicare"]
