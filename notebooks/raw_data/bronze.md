@@ -14,7 +14,7 @@ The script performs the following steps:
 # 1. Initialize Faker
 ```python
 fake = Faker()
-
+```
 # 2. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
 patient_schema = StructType([
