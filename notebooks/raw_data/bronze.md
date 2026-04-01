@@ -47,10 +47,10 @@ for i in range(1, 101):
 ```python
 df_patients = spark.createDataFrame(patient_data, schema=patient_schema)
 ```
-```python
+
 # 5. Write to Lakehouse (Bronze Layer)
 # Using Delta format for ACID compliance and schema enforcement
-```
+
 ```python
 df_patients.write \
     .format("delta") \
@@ -62,6 +62,7 @@ display(df_patients.limit(10))
 
 # 1. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
+```python
 physician_schema = StructType([
     StructField("PhysicianKey", IntegerType(), False),
     StructField("NPI_Number", StringType(), False),
@@ -69,7 +70,7 @@ physician_schema = StructType([
     StructField("Specialty", StringType(), True),
     StructField("Department", StringType(), True)
 ])
-
+```
 # 2. Define lists for realistic data
 specialties = [
     ("Cardiology", "Internal Medicine"),
