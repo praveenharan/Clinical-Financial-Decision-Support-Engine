@@ -26,7 +26,7 @@ patient_schema = StructType([
     StructField("Gender", StringType(), True),
     StructField("Insurance_Provider", StringType(), True)
 ])
-```python
+```
 # 3. Synthetic Data Generation
 ```python
 providers = ["Blue Cross Blue Shield", "Aetna", "UnitedHealthcare", "Cigna", "Kaiser Permanente", "Medicare"]
@@ -42,13 +42,15 @@ for i in range(1, 101):
         random.choice(genders), 
         random.choice(providers)
     ))
-```python
+```
 # 4. Create DataFrame
 ```python
 df_patients = spark.createDataFrame(patient_data, schema=patient_schema)
+```
 ```python
 # 5. Write to Lakehouse (Bronze Layer)
 # Using Delta format for ACID compliance and schema enforcement
+```
 ```python
 df_patients.write \
     .format("delta") \
@@ -56,7 +58,7 @@ df_patients.write \
     .saveAsTable("Dim_Patients")
 
 display(df_patients.limit(10))
-```python
+```
 
 # 1. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
