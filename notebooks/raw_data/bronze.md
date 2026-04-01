@@ -23,6 +23,7 @@ from pyspark.sql.functions import col, expr, date_format, year, month, dayofmont
 import random
 from pyspark.sql.functions import udf
 from pyspark.sql.types import IntegerType
+from datetime import date, timedelta
 
 ```
 # 2. Define Schema
@@ -53,7 +54,7 @@ physician_schema = StructType([
 ```python
 # 1. Define date range
 start_date = "2020-01-01"
-end_date = "2030-12-31"
+end_date = (date.today() - timedelta(days=1)).isoformat()
 
 # 2. Generate the sequence and explode into a single column named "FullDate"
 df_base = spark.range(1).select(
