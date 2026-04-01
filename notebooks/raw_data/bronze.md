@@ -12,11 +12,12 @@ The script performs the following steps:
 
 ## Implementation
 # 1. Initialize Faker
-```
+```python
 fake = Faker()
 ```
 # 2. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
+```python
 patient_schema = StructType([
     StructField("PatientKey", IntegerType(), False),
     StructField("MRN", StringType(), False),
@@ -25,7 +26,7 @@ patient_schema = StructType([
     StructField("Gender", StringType(), True),
     StructField("Insurance_Provider", StringType(), True)
 ])
-
+```python
 # 3. Synthetic Data Generation
 providers = ["Blue Cross Blue Shield", "Aetna", "UnitedHealthcare", "Cigna", "Kaiser Permanente", "Medicare"]
 genders = ["M", "F", "Other", "U"]
