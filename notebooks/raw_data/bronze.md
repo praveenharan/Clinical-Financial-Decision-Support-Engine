@@ -11,24 +11,12 @@ The script performs the following steps:
 4. **Data Persistence**: Writes the resulting DataFrame to a Delta table named `Dim_Patients`.
 
 ## Implementation
-### Patients Data
-
-```python
-# Install Faker library
-%pip install faker
-
-from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DateType
-from pyspark.sql.functions import col, expr, date_format
-import random
-from faker import Faker
-
 # 1. Initialize Faker
 fake = Faker()
 
 # 2. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
-schema = StructType([
+patient_schema = StructType([
     StructField("PatientKey", IntegerType(), False),
     StructField("MRN", StringType(), False),
     StructField("Name", StringType(), True),
@@ -41,9 +29,9 @@ schema = StructType([
 providers = ["Blue Cross Blue Shield", "Aetna", "UnitedHealthcare", "Cigna", "Kaiser Permanente", "Medicare"]
 genders = ["M", "F", "Other", "U"]
 
-data = []
+patient_data = []
 for i in range(1, 101):
-    data.append((
+    patient_data.append((
         i, 
         f"MRN-{random.randint(100000, 999999)}", 
         fake.name(), 
@@ -53,7 +41,7 @@ for i in range(1, 101):
     ))
 
 # 4. Create DataFrame
-df_patients = spark.createDataFrame(data, schema=schema)
+df_patients = spark.createDataFrame(patient_data, schema=patient_schema)
 
 # 5. Write to Lakehouse (Bronze Layer)
 # Using Delta format for ACID compliance and schema enforcement
@@ -62,54 +50,4 @@ df_patients.write \
     .mode("overwrite") \
     .saveAsTable("Dim_Patients")
 
-### Physician Data Implementation
-
-# 1. Define Schema
-# Defining a strict schema ensures data quality during the ingestion phase.
-physician_schema = StructType([
-    StructField("PhysicianKey", IntegerType(), False),
-    StructField("NPI_Number", StringType(), False),
-    StructField("Name", StringType(), True),
-    StructField("Specialty", StringType(), True),
-    StructField("Department", StringType(), True)
-])
-
-# 2. Define lists for realistic data
-# Tuples of (Specialty, Department) for logical consistency
-specialties = [
-    ("Cardiology", "Internal Medicine"),
-    ("Pediatrics", "Primary Care"),
-    ("Neurology", "Specialized Medicine"),
-    ("Orthopedics", "Surgery"),
-    ("Dermatology", "Ambulatory"),
-    ("Oncology", "Internal Medicine"),
-    ("Emergency Medicine", "Acute Care"),
-    ("Radiology", "Diagnostics")
-]
-
-# 3. Synthetic Data Generation
-# Generate 10 Physician records
-physician_data = []
-for i in range(1, 11):
-    spec_dept = random.choice(specialties)
-    physician_data.append((
-        i,                                            # PhysicianKey
-        str(random.randint(1000000000, 1999999999)),  # NPI (10-digit)
-        f"Dr. {fake.name()}",                         # Name
-        spec_dept[0],                                 # Specialty
-        spec_dept[1]                                  # Department
-    ))
-
-# 4. Create DataFrame
-df_physicians = spark.createDataFrame(physician_data, schema=physician_schema)
-
-# 5. Write to Lakehouse (Bronze Layer)
-# Using Delta format for ACID compliance and schema enforcement
-df_physicians.write \
-    .format("delta") \
-    .mode("overwrite") \
-    .saveAsTable("Dim_Physician")
-
-# 6. Verify Output
-display(df_physicians.limit(10))
-    .saveAsTable("Dim_Physician")
+display(df_patients.limit(10))
