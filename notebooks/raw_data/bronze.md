@@ -62,6 +62,7 @@ df_patients.write \
     .mode("overwrite") \
     .saveAsTable("Dim_Patients")
 
+```python
 ### Physician Data
 # Define Schema
 physician_schema = StructType([
