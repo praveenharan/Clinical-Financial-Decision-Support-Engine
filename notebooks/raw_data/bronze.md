@@ -62,7 +62,9 @@ df_patients.write \
     .mode("overwrite") \
     .saveAsTable("Dim_Patients")
 
-# Define Schema
+### Physician Data Implementation
+
+# 1. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
 physician_schema = StructType([
     StructField("PhysicianKey", IntegerType(), False),
@@ -72,7 +74,8 @@ physician_schema = StructType([
     StructField("Department", StringType(), True)
 ])
 
-# Define lists for realistic data
+# 2. Define lists for realistic data
+# Tuples of (Specialty, Department) for logical consistency
 specialties = [
     ("Cardiology", "Internal Medicine"),
     ("Pediatrics", "Primary Care"),
@@ -90,11 +93,11 @@ physician_data = []
 for i in range(1, 11):
     spec_dept = random.choice(specialties)
     physician_data.append((
-        i,                                           # PhysicianKey
-        str(random.randint(1000000000, 1999999999)), # NPI (10-digit)
-        f"Dr. {fake.name()}",                        # Name
-        spec_dept[0],                                # Specialty
-        spec_dept[1]                                 # Department
+        i,                                            # PhysicianKey
+        str(random.randint(1000000000, 1999999999)),  # NPI (10-digit)
+        f"Dr. {fake.name()}",                         # Name
+        spec_dept[0],                                 # Specialty
+        spec_dept[1]                                  # Department
     ))
 
 # 4. Create DataFrame
@@ -105,4 +108,8 @@ df_physicians = spark.createDataFrame(physician_data, schema=physician_schema)
 df_physicians.write \
     .format("delta") \
     .mode("overwrite") \
+    .saveAsTable("Dim_Physician")
+
+# 6. Verify Output
+display(df_physicians.limit(10))
     .saveAsTable("Dim_Physician")
