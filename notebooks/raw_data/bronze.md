@@ -11,7 +11,7 @@ The script performs the following steps:
 4. **Data Persistence**: Writes the resulting DataFrame to a Delta table named `Dim_Patients`.
 
 ## Implementation
-# 1. Initialize Faker
+# 1. Environment Setup & Library Imports
 ```python
 %pip install faker
 
