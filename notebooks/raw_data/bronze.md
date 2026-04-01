@@ -22,7 +22,6 @@ from pyspark.sql.types import StructType, StructField, IntegerType, StringType, 
 from pyspark.sql.functions import col, expr, date_format, year, month, dayofmonth, quarter, dayofweek, explode, floor, rand, round, when
 import random
 from pyspark.sql.functions import udf
-from pyspark.sql.types import IntegerType
 from datetime import date, timedelta
 
 ```
