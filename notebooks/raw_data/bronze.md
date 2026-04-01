@@ -13,7 +13,18 @@ The script performs the following steps:
 ## Implementation
 # 1. Initialize Faker
 ```python
+%pip install faker
+
 fake = Faker()
+
+from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DateType
+from pyspark.sql.functions import col, expr, date_format, year, month, dayofmonth, quarter, dayofweek, explode, floor, rand, round, when
+import random
+from faker import *
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType
+
 ```
 # 2. Define Schema
 # Defining a strict schema ensures data quality during the ingestion phase.
