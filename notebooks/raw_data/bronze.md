@@ -12,7 +12,7 @@ The script performs the following steps:
 
 ## Implementation
 # 1. Initialize Faker
-```python
+```
 fake = Faker()
 ```
 # 2. Define Schema
