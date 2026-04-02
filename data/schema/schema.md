@@ -68,6 +68,8 @@ root
  |-- Test_DateKey: integer (nullable = true)
  |-- Test_Type: string (nullable = false)
  |-- Result_Value: double (nullable = true)
+ |-- PhysicianKey: long (nullable = true)
+ |-- AdmissionKey: long (nullable = true)
  |-- Flag_Abnormal: string (nullable = false)
 
 ```
