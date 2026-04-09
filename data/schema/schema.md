@@ -1,6 +1,6 @@
 # Schema
 
-### df_patients
+### dim_patients
 ```python
 root
  |-- PatientKey: integer (nullable = false)
@@ -11,7 +11,7 @@ root
  |-- Insurance_Provider: string (nullable = true)
 ```
 
-### df_physicians
+### dim_physicians
 ```python
 root
  |-- PhysicianKey: integer (nullable = false)
@@ -36,7 +36,7 @@ root
  |-- DayType: string (nullable = false)
 ```
 
-### df_diagnosis
+### dim_diagnosis
 ```python
 root
  |-- DiagnosisKey: integer (nullable = false)
